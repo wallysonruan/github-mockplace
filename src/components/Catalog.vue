@@ -104,7 +104,7 @@ const benefits: ProductItem[] = [
     }
 
     .catalog__item{
-        flex-grow: 1;
+        width: 50%;
 
         display: flex;
         flex-direction: row;
