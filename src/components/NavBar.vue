@@ -30,25 +30,18 @@ const navBarOptions = [
 </template>
 
 <style scoped>
-ul{
-    width: 100%;
-    height: 100%;
-}
 
 nav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-bottom: 1px black solid;
 }
 
 ul{
     display: flex;
-    flex-direction: row;
+    padding: 0;
 }
 
 li{
-    width: 7rem;
+    margin-right: 2.5rem;
 
     list-style: none;
     text-align: center;
