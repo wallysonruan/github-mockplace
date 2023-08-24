@@ -5,32 +5,29 @@ export type ProductItem =  {
     text: string;
 };
 
-
 defineProps<{ 
-    products: ProductItem[],
+    product: ProductItem,
 }>()
 
 </script>
 
 <template>
-    <div class="product__container">
-        <div class="container__item" v-for="product in products" :key="product.title.slice(0,3)">
-            <h3> {{product.title}}</h3>
-            <p> {{product.text}} </p>
-            <a href="#">Learn More</a>
-        </div>
+    <div class="product">
+        <h3 class="product__title"> {{product.title}}</h3>
+        <p> {{product.text}} </p>
+        <a href="#">Learn More</a>
     </div>
 </template>
 
 <style scoped>
-.product__container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
+    .product{
+        width: 15rem;
+        max-width: 20rem;
+        padding: 1rem;
+        background-color: brown;
+    }
 
-.container__item{
-    width: 10rem;
-    background-color: brown;
-}
+    .product__title{
+        margin: 0;
+    }
 </style>
