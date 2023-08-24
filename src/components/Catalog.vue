@@ -21,19 +21,6 @@ const products: ProductItem[] = [
     }
 ]
 
-const benefits: ProductItem[] = [
-    {
-        title: "Cheap",
-        description: "Pay using dollar, the prices are in Real.",
-        url: "#"
-    },
-    {
-        title: "Anonimity",
-        description: "No one cares about what you do on the web.",
-        url: "#"
-    }
-]
-
 </script>
 
 <template>
@@ -67,18 +54,6 @@ const benefits: ProductItem[] = [
                     <div class="catalog__grid">
                         <div class="catalog__item" v-for="product in products" :key="product.title.slice(0,3)">
                             <Product :product="product"/>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <a href="#">View All&nbsp;&nbsp;&nbsp;></a>
-                </section>
-                <section>
-                    <h2>Benefits</h2>
-                    <hr>
-                    <div class="catalog__grid">
-                        <div class="catalog__item" v-for="benefit in benefits" :key="benefit.title.slice(0,3)">
-                            <Product :product="benefit"/>
                         </div>
                     </div>
                     <br>
