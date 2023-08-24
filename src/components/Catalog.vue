@@ -7,17 +7,54 @@ const products: ProductItem[] = [
     {
         title: "Hacking Abilities",
         description: "Get infinity gossip information! Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        url: "#"
+        url: "#",
+        type: 'App',
+        categories: ['API management']
     },
     {
         title: "Love",
         description: "Be loved for eternity!",
-        url: "#"
+        url: "#",
+        type: 'App',
+        categories: ['API management']
     },
     {
         title: "Self-steem",
         description: "Be the most self-steemed person in the Universe.",
-        url: "#"
+        url: "#",
+        type: 'App',
+        categories: ['API management']
+    }
+]
+
+type menuOptions = {
+    name: string;
+    url: string
+}
+
+const types: menuOptions[] = [
+    {
+        name: 'Apps',
+        url: ''
+    },
+    {
+        name: 'Actions',
+        url: ''
+    }
+]
+
+const categories: menuOptions[] = [
+    {
+        name: 'API management',
+        url: ''
+    },
+    {
+        name: 'Chat',
+        url: ''
+    },
+    {
+        name: 'Code quality',
+        url: ''
     }
 ]
 
@@ -28,21 +65,17 @@ const products: ProductItem[] = [
             <nav class="catalog__menu">
                 <div>
                     <h2>Types</h2>
-                    <ul>
+                    <ul v-for="type in types" :key="type.name">
                         <li class="menu__item">
-                            <a href="#">Apps</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#">Actions</a>
+                            <a :href="type.url">{{ type.name }}</a>
                         </li>
                     </ul>
                 </div>
                 <div>
                     <h2>Categories</h2>
-                    <ul>
+                    <ul v-for="category in categories" :key="category.name">
                         <li class="menu__item">
-                            <a href="#">AWS EKS</a>
-                            <a href="#">S3</a>
+                            <a :href="category.url">{{ category.name }}</a>
                         </li>
                     </ul>
                 </div>
