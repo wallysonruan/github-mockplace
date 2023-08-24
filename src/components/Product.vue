@@ -2,7 +2,8 @@
 
 export type ProductItem =  {
     title: string;
-    text: string;
+    description: string;
+    link: string
 };
 
 defineProps<{ 
@@ -14,8 +15,8 @@ defineProps<{
 <template>
     <div class="product">
         <h3 class="product__title"> {{product.title}}</h3>
-        <p> {{product.text}} </p>
-        <a href="#">Learn More</a>
+        <p class="product__description"> {{product.description}} </p>
+        <a :href="product.link">Learn More</a>
     </div>
 </template>
 
@@ -23,10 +24,18 @@ defineProps<{
     .product{
         width: 100%;
         padding: 1rem;
-        background-color: brown;
+    }
+    
+    .product__description{
+        max-width: 35ch;
+        max-height: 5ch;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .product__title{
+        max-width: 35ch;
         margin: 0;
     }
 </style>
