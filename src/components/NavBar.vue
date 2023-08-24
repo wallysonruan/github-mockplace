@@ -21,9 +21,9 @@ const navBarOptions = [
     <nav>
         <ul>
             <li v-for="navOptions of navBarOptions" :class="navOptions.title">
-                <a :href="navOptions.link">
+                <RouterLink :to="navOptions.link">
                     {{ navOptions.title }}
-                </a>
+                </RouterLink>
             </li>
         </ul>
     </nav>
