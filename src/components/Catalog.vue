@@ -53,16 +53,30 @@ const benefits: ProductItem[] = [
                     </ul>
                 </div>
             </div>
-            <div class="catalog__products-container">
+            <div class="catalog">
                 <section>
                     <h2>Products</h2>
                     <hr>
-                    <Product :products="products"/>
+                    <div class="catalog__grid">
+                        <div class="catalog__item" v-for="product in products" :key="product.title.slice(0,3)">
+                            <Product :product="product"/>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <a href="#">View All&nbsp;&nbsp;&nbsp;></a>
                 </section>
                 <section>
                     <h2>Benefits</h2>
                     <hr>
-                    <Product :products="benefits"/>
+                    <div class="catalog__grid">
+                        <div class="catalog__item" v-for="benefit in benefits" :key="benefit.title.slice(0,3)">
+                            <Product :product="benefit"/>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <a href="#">View All&nbsp;&nbsp;&nbsp;></a>
                 </section>
             </div>
         </div>
@@ -74,16 +88,26 @@ const benefits: ProductItem[] = [
         flex-direction: row;
     }
 
-    .container div{
-        background-color: blue;
-    }
-
     .catalog__menu{
         flex-grow: 1;
     }
 
-    .catalog__products-container{
+    .catalog{
         flex-grow: 4;
         background-color: yellow;
+    }
+
+    .catalog__grid{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .catalog__item{
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 </style>
