@@ -3,7 +3,9 @@
 export type ProductItem =  {
     title: string;
     description: string;
-    url: string
+    url: string;
+    types: string[];
+    categories: string[]
 };
 
 defineProps<{ 
