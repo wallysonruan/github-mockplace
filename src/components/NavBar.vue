@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const navNames = [
+const navBarOptions = [
     {
         title: "Products",
         link: "#"
@@ -20,37 +20,31 @@ const navNames = [
 <template>
     <nav>
         <ul>
-            <li> <!---Blank space--></li>
-            <li v-for="navName of navNames" :class="navName.title">
-                <a :href="navName.link">
-                    {{ navName.title }}
+            <li v-for="navOptions of navBarOptions" :class="navOptions.title">
+                <a :href="navOptions.link">
+                    {{ navOptions.title }}
                 </a>
             </li>
         </ul>
     </nav>
-    <div class="outdoor">
-        <a :href="navNames[0].link">
-            {{ navNames[0].title }}&nbsp;&nbsp;/
-        </a>
-        <p class="outdoor__title">
-            Service Catalog
-        </p>
-        <p class="outdoor__text">
-            All products are awesome.
-        </p>
-    </div>
 </template>
 
 <style scoped>
-nav{
+ul{
     width: 100%;
+    height: 100%;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px black solid;
 }
 
 ul{
     display: flex;
     flex-direction: row;
-
-    background-color: red;
 }
 
 li{
@@ -58,22 +52,5 @@ li{
 
     list-style: none;
     text-align: center;
-    
-    background-color: blueviolet;
-}
-
-.outdoor{
-    background-color: brown;
-}
-
-.outdoor__title{
-    font-size: 3rem;
-    font-weight: 600;
-
-    margin-bottom: 1.5rem;
-}
-
-.outdoor__text{
-    font-weight: 400;
 }
 </style>
