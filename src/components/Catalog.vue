@@ -96,7 +96,6 @@ const benefits: ProductItem[] = [
 
         margin: auto;
         width: max-content;
-        background-color: yellow;
     }
 
     .catalog__menu{

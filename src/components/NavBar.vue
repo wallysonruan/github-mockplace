@@ -2,16 +2,16 @@
 
 const navBarOptions = [
     {
-        title: "Products",
-        link: "#"
+        title: "Home",
+        link: "/"
     },
     {
         title: "Documentation",
-        link: "#"
+        link: "/docs"
     },
     {
         title: "About",
-        link: "#"
+        link: "/about"
     }
 ]
 
