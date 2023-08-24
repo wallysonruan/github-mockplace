@@ -3,7 +3,7 @@
 export type ProductItem =  {
     title: string;
     description: string;
-    link: string
+    url: string
 };
 
 defineProps<{ 
@@ -16,7 +16,7 @@ defineProps<{
     <div class="product">
         <h3 class="product__title"> {{product.title}}</h3>
         <p class="product__description"> {{product.description}} </p>
-        <a :href="product.link">Learn More</a>
+        <a :href="product.url">Learn More</a>
     </div>
 </template>
 
