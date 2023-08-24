@@ -21,8 +21,7 @@ defineProps<{
 
 <style scoped>
     .product{
-        width: 15rem;
-        max-width: 20rem;
+        width: 100%;
         padding: 1rem;
         background-color: brown;
     }
