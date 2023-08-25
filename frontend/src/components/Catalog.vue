@@ -2,14 +2,14 @@
 import axios from 'axios';
 import { ProductItem } from './Product.vue';
 import Product from './Product.vue';
-import { onMounted, ref } from 'vue';
+import { Ref, onMounted, ref } from 'vue';
 
-async function getAndProcessProducts(): Promise<void> {
+async function getAndProcessProducts(productsDisplay: Ref<ProductItem[]>): Promise<void> {
     try {
         const response = await axios.get("http://localhost:8080/products");
 
         response.data.forEach((product: ProductItem) => {
-            products.value.push(product)
+            productsDisplay.value.push(product)
         });
     }catch (error) {
         console.error(error);
@@ -20,7 +20,7 @@ async function getAndProcessProducts(): Promise<void> {
 const products = ref<ProductItem[]>([])
 
 onMounted(() => {
-    getAndProcessProducts()
+    getAndProcessProducts(products)
 })
 
 type menuOptions = {
