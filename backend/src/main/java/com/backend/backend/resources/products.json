@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Application 1",
+    "description": "Good to install",
+    "url": "this",
+    "types": [
+      "APP"
+    ],
+    "categories": [
+      "API MANAGEMENT"
+    ]
+  },
+  {
+    "title": "Application 2",
+    "description": "Good to install",
+    "url": "this",
+    "types": [
+      "APP"
+    ],
+    "categories": [
+      "API MANAGEMENT"
+    ]
+  },
+  {
+    "title": "Application 3",
+    "description": "Good to install",
+    "url": "this",
+    "types": [
+      "APP"
+    ],
+    "categories": [
+      "API MANAGEMENT"
+    ]
+  }
+]
