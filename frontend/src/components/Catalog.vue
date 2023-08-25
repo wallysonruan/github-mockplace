@@ -85,16 +85,29 @@ const categories: menuOptions[] = [
             <div>
                 <section>
                     <h2>Apps</h2>
-                    <hr>
-                    <div>
-                        <div v-for="product in products_to_display" :key="product.title.slice(0,3)">
-                            <Product :product="product"/>
+                    <div class="products-container">
+                        <div class="apps-container">
+                            <div v-for="product in products_to_display" :key="product.title.slice(0,3)">
+                                <Product :product="product"/>
+                            </div>
                         </div>
+                        <br>
+                        <br>
+                        <a href="#">View All&nbsp;&nbsp;&nbsp;></a>
                     </div>
-                    <br>
-                    <br>
-                    <a href="#">View All&nbsp;&nbsp;&nbsp;></a>
                 </section>
             </div>
         </div>
 </template>
+
+<style scoped>
+.products-container{
+    background-color: red;
+    width: 90vh;
+}
+.apps-container{
+    background-color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+}
+</style>
