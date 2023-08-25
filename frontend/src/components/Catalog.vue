@@ -108,14 +108,14 @@ const categories: menuOptions[] = [
     }
 
     .catalog__menu{
-        min-width: 20vh;
+        min-width: 25vh;
         padding-left: 1rem;
 
         background-color:burlywood;
     }
 
     .catalog__menu ul{
-        padding: 0;
+        padding: 0.5rem;
     }
 
     .catalog__menu ul li{
@@ -123,7 +123,7 @@ const categories: menuOptions[] = [
     }
 
     .catalog{
-        flex-grow: 2;
+        padding: 0.5rem;
         min-width: 70vh;
         background-color:cadetblue;
     }
