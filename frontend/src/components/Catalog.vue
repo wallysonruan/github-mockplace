@@ -1,31 +1,27 @@
 <script setup lang="ts">
+import axios from 'axios';
 import { ProductItem } from './Product.vue';
 import Product from './Product.vue';
+import { onMounted, ref } from 'vue';
 
+async function getAndProcessProducts(): Promise<void> {
+    try {
+        const response = await axios.get("http://localhost:8080/products");
 
-const products: ProductItem[] = [
-    {
-        title: "Hacking Abilities",
-        description: "Get infinity gossip information! Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        url: "#",
-        types: ['App'],
-        categories: ['API management']
-    },
-    {
-        title: "Love",
-        description: "Be loved for eternity!",
-        url: "#",
-        types: ['App'],
-        categories: ['API management']
-    },
-    {
-        title: "Self-steem",
-        description: "Be the most self-steemed person in the Universe.",
-        url: "#",
-        types: ['App'],
-        categories: ['API management']
-    }
-]
+        response.data.forEach((product: ProductItem) => {
+            products.value.push(product)
+        });
+    }catch (error) {
+        console.error(error);
+  }
+
+}
+
+const products = ref<ProductItem[]>([])
+
+onMounted(() => {
+    getAndProcessProducts()
+})
 
 type menuOptions = {
     name: string;
