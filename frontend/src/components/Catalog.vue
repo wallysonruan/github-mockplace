@@ -10,21 +10,23 @@ const props = defineProps<{
 
 const products_to_display = ref<ProductItem[]>([])
 
-async function getAndProcessProducts(productsDisplay: Ref<ProductItem[]>): Promise<void> {
+async function getProducts(productsDisplay: Ref<ProductItem[]>): Promise<void> {
     try {
-        const response = await axios.get(props.products_url);
-
-        response.data.forEach((product: ProductItem) => {
-            productsDisplay.value.push(product)
-        });
+        const products = ( await axios.get(props.products_url) ).data;
+        setProductsToDisplay(productsDisplay, products)
     }catch (error) {
         console.error(error);
   }
+}
 
+function setProductsToDisplay(productsDisplay: Ref<ProductItem[]>, products: ProductItem[]){
+    products.forEach((product: ProductItem) => {
+            productsDisplay.value.push(product)
+        });
 }
 
 onMounted(() => {
-    getAndProcessProducts(products_to_display)
+    getProducts(products_to_display)
 })
 
 type menuOptions = {
