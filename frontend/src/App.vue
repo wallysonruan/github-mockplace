@@ -5,17 +5,10 @@ import NavBar from './components/NavBar.vue'
 </script>
 
 <template>
-    <div class="section">
-        <div class="container">
+    <div>
+        <div>
             <NavBar />
             <RouterView />
         </div>
     </div>
 </template>
-
-<style>
-    body{
-        margin: 0;
-        padding: 0;
-    }
-</style>
