@@ -1,7 +1,7 @@
 [
   {
-    "title": "Application 1",
-    "description": "Good to install",
+    "title": "Imgbot",
+    "description": "A Github app that optimizes your images",
     "url": "this",
     "types": [
       "APP"
@@ -11,8 +11,8 @@
     ]
   },
   {
-    "title": "Application 2",
-    "description": "Good to install",
+    "title": "CircleCI",
+    "description": "Automatically build, test, and deploy your project in minutes",
     "url": "this",
     "types": [
       "APP"
@@ -22,8 +22,30 @@
     ]
   },
   {
-    "title": "Application 3",
-    "description": "Good to install",
+    "title": "CodeFactor",
+    "description": "Automated code review for Github",
+    "url": "this",
+    "types": [
+      "APP"
+    ],
+    "categories": [
+      "API MANAGEMENT"
+    ]
+  },
+  {
+    "title": "Rewind Backups for GitHub (Formerly BackHub)",
+    "description": "Automatic daily backups of your GitHub repos and metadata with on-demand restores to protect your business Recommended",
+    "url": "this",
+    "types": [
+      "APP"
+    ],
+    "categories": [
+      "API MANAGEMENT"
+    ]
+  },
+  {
+    "title": "Code Climate",
+    "description": "Automated code review for technical debt and test coverage Recommended",
     "url": "this",
     "types": [
       "APP"
