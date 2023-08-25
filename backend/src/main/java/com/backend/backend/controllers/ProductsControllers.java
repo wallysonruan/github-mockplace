@@ -3,12 +3,14 @@ package com.backend.backend.controllers;
 import com.backend.backend.models.Product;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProductsControllers {
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/products")
     ResponseEntity<Product[]> get(){
         Product[] body = {
