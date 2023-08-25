@@ -16,8 +16,11 @@ defineProps<{
 
 <template>
     <div>
-        <h3> {{product.title}}</h3>
+        <h3>
+            <a :href="product.url">
+                {{product.title}}
+            </a>
+        </h3>
         <p> {{product.description}} </p>
-        <a :href="product.url">Learn More</a>
     </div>
 </template>
