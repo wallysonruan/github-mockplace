@@ -4,9 +4,15 @@ import { ProductItem } from './Product.vue';
 import Product from './Product.vue';
 import { Ref, onMounted, ref } from 'vue';
 
+const props = defineProps<{ 
+    products_url: string,
+}>()
+
+const products_to_display = ref<ProductItem[]>([])
+
 async function getAndProcessProducts(productsDisplay: Ref<ProductItem[]>): Promise<void> {
     try {
-        const response = await axios.get("http://localhost:8080/products");
+        const response = await axios.get(props.products_url);
 
         response.data.forEach((product: ProductItem) => {
             productsDisplay.value.push(product)
@@ -17,10 +23,8 @@ async function getAndProcessProducts(productsDisplay: Ref<ProductItem[]>): Promi
 
 }
 
-const products = ref<ProductItem[]>([])
-
 onMounted(() => {
-    getAndProcessProducts(products)
+    getAndProcessProducts(products_to_display)
 })
 
 type menuOptions = {
@@ -81,7 +85,7 @@ const categories: menuOptions[] = [
                     <h2>Products</h2>
                     <hr>
                     <div class="catalog__grid">
-                        <div class="catalog__item" v-for="product in products" :key="product.title.slice(0,3)">
+                        <div class="catalog__item" v-for="product in products_to_display" :key="product.title.slice(0,3)">
                             <Product :product="product"/>
                         </div>
                     </div>
