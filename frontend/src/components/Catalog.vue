@@ -97,14 +97,17 @@ const categories: menuOptions[] = [
     .container{
         display: flex;
         flex-direction: row;
+        align-content: center;
 
         margin: auto;
         width: max-content;
     }
 
     .catalog__menu{
-        min-width: 20ch;
+        min-width: 20vh;
         padding-left: 1rem;
+
+        background-color:burlywood;
     }
 
     .catalog__menu ul{
@@ -117,6 +120,8 @@ const categories: menuOptions[] = [
 
     .catalog{
         flex-grow: 2;
+        min-width: 70vh;
+        background-color:cadetblue;
     }
 
     .catalog__grid{

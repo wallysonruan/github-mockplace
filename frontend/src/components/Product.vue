@@ -26,6 +26,8 @@ defineProps<{
     .product{
         width: 100%;
         padding: 1rem;
+        background-color: bisque;
+        border: 1px black solid;
     }
     
     .product__description{

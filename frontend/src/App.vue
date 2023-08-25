@@ -12,3 +12,10 @@ import NavBar from './components/NavBar.vue'
         </div>
     </div>
 </template>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+</style>
