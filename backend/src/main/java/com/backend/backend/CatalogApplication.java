@@ -1,13 +1,13 @@
-package com.servicecatalog.servicecatalog;
+package com.backend.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServiceCatalogApplication {
+public class CatalogApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ServiceCatalogApplication.class, args);
+		SpringApplication.run(CatalogApplication.class, args);
 	}
 
 }
