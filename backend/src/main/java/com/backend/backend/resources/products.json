@@ -1,55 +1,65 @@
 [
   {
     "title": "Imgbot",
+    "publisher_name": "imgbot",
+    "is_publisher_verified": true,
     "description": "A Github app that optimizes your images",
-    "url": "imgbot",
-    "types": [
-      "APP"
-    ],
+    "is_recommended": true,
+    "total_downloads": 0,
+    "url": "this",
+    "types": "APP",
     "categories": [
       "API MANAGEMENT"
     ]
   },
   {
     "title": "CircleCI",
+    "publisher_name": "circleci",
+    "is_publisher_verified": true,
     "description": "Automatically build, test, and deploy your project in minutes",
-    "url": "circleci",
-    "types": [
-      "APP"
-    ],
+    "is_recommended": true,
+    "total_downloads": 0,
+    "url": "this",
+    "types": "APP",
     "categories": [
       "API MANAGEMENT"
     ]
   },
   {
     "title": "CodeFactor",
+    "publisher_name": "codefactor-io",
+    "is_publisher_verified": true,
     "description": "Automated code review for Github",
-    "url": "codefactor",
-    "types": [
-      "APP"
-    ],
+    "is_recommended": true,
+    "total_downloads": 0,
+    "url": "this",
+    "types": "APP",
     "categories": [
       "API MANAGEMENT"
     ]
   },
   {
     "title": "Rewind Backups for GitHub (Formerly BackHub)",
+    "publisher_name": "backhub",
+    "is_publisher_verified": true,
     "description": "Automatic daily backups of your GitHub repos and metadata with on-demand restores to protect your business",
-    "url": "backhub",
-    "types": [
-      "APP"
-    ],
+    "is_recommended": true,
+    "total_downloads": 0,
+    "url": "this",
+    "types": "APP",
     "categories": [
       "API MANAGEMENT"
     ]
   },
   {
     "title": "Code Climate",
-    "description": "Automated code review for technical debt and test coverage Recommended",
-    "url": "code-climate",
-    "types": [
-      "APP"
-    ],
+    "publisher_name": "codeclimate",
+    "is_publisher_verified": false,
+    "description": "Automated code review for technical debt and test coverage",
+    "is_recommended": true,
+    "total_downloads": 0,
+    "url": "this",
+    "types": "APP",
     "categories": [
       "API MANAGEMENT"
     ]
