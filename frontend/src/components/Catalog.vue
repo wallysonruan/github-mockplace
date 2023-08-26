@@ -31,22 +31,18 @@ onMounted(() => {
 </script>
 
 <template>
-        <div>
-            <div>
-                <section>
-                    <h2>Apps</h2>
-                    <div class="products-container">
-                        <div class="apps-container">
-                            <div class="product" v-for="product in products_to_display" :key="product.title.slice(0,3)">
-                                    <Product :product="product"/>
-                            </div>
-                        </div>
-                        <br>
-                        <a href="#">View All&nbsp;&nbsp;&nbsp;></a>
-                    </div>
-                </section>
+    <section>
+        <h2>Apps</h2>
+        <div class="products-container">
+            <div class="apps-container">
+                <div class="product" v-for="product in products_to_display" :key="product.title.slice(0,3)">
+                        <Product :product="product"/>
+                </div>
             </div>
+            <br>
+            <a href="#">View All&nbsp;&nbsp;&nbsp;></a>
         </div>
+    </section>
 </template>
 
 <style scoped>

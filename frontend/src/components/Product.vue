@@ -32,9 +32,7 @@ a{
     text-decoration: none;
 }
 .custom-card{
-    border-radius: 0%;
     height: 100%;
-
 }
 .custom-card-title{
     font-size: large;

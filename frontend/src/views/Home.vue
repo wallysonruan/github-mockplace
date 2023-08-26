@@ -13,13 +13,15 @@ import CatalogMenu from '../components/CatalogMenu.vue';
 <style scoped>
     .home-container{
         display: flex;
+        width: 80%;
+        margin: auto;
     }
 
     .catalog-grid{
-        flex-grow: 2;
+        width: 80%;
     }
-    
+
     .catalog-menu{
-        flex-grow: 1;
+        width: 20%;
     }
 </style>
