@@ -63,7 +63,7 @@ const categories: menuOptions[] = [
 </script>
 
 <template>
-        <div>
+        <div class="catalog-container">
             <nav>
                 <div>
                     <h2>Types</h2>
@@ -87,11 +87,10 @@ const categories: menuOptions[] = [
                     <h2>Apps</h2>
                     <div class="products-container">
                         <div class="apps-container">
-                            <div v-for="product in products_to_display" :key="product.title.slice(0,3)">
-                                <Product :product="product"/>
+                            <div class="product" v-for="product in products_to_display" :key="product.title.slice(0,3)">
+                                    <Product :product="product"/>
                             </div>
                         </div>
-                        <br>
                         <br>
                         <a href="#">View All&nbsp;&nbsp;&nbsp;></a>
                     </div>
@@ -101,6 +100,10 @@ const categories: menuOptions[] = [
 </template>
 
 <style scoped>
+.catalog-container{
+    margin: auto;
+    width: min-content;
+}
 .products-container{
     background-color: red;
     width: 90vh;
@@ -109,5 +112,10 @@ const categories: menuOptions[] = [
     background-color: yellow;
     display: flex;
     flex-wrap: wrap;
+}
+
+.product{
+    width: 50%;
+    box-sizing: border-box;
 }
 </style>
