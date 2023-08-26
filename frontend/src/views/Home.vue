@@ -12,8 +12,7 @@ import CatalogMenu from '../components/CatalogMenu.vue';
 
 <style scoped>
     .home-container{
-        margin: auto;
-        width: min-content;
+        place-content: center;
 
         display: flex;
     }
