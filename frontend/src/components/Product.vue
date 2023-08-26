@@ -16,12 +16,12 @@ defineProps<{
 
 <template>
     <a :href="product.url">
-    <div class="card border-0">
+    <div class="custom-card card border-0">
         <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="custom-card-title">
                     {{product.title}}
                 </h3>
-                <p class="card-text"> {{product.description}} </p>
+                <p class="custom-card-text"> {{product.description}} </p>
             </div>
         </div>
     </a>
@@ -31,16 +31,18 @@ defineProps<{
 a{
     text-decoration: none;
 }
-.card{
+.custom-card{
     border-radius: 0%;
-    min-height: 6rem;
+    height: 100%;
+
 }
-.card-title{
+.custom-card-title{
     font-size: large;
     font-weight: 500;
     color: #0969da;
 }
-.card-text{
+.custom-card-text{
     color: #656D76;
+    font-size: medium;
 }
 </style>
