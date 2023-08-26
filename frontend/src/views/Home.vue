@@ -18,6 +18,7 @@ import CatalogMenu from '../components/CatalogMenu.vue';
     .catalog-grid{
         flex-grow: 2;
     }
+    
     .catalog-menu{
         flex-grow: 1;
     }
