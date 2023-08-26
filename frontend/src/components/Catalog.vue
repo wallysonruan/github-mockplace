@@ -50,9 +50,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.products-container{
-    width: 90vh;
-}
 .apps-container{
     display: flex;
     flex-wrap: wrap;

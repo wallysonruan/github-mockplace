@@ -16,8 +16,8 @@ defineProps<{
 
 <template>
     <a :href="product.url">
-    <div class="custom-card card border-0">
-        <div class="card-body">
+    <div class="custom-card border-0">
+        <div>
             <h3 class="custom-card-title">
                     {{product.title}}
                 </h3>

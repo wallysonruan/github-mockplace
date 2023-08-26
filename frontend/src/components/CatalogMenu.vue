@@ -117,9 +117,7 @@ const categories: menuOptions[] = [
 </template>
 
 <style scoped>
-nav{
-    width: 15rem;
-}
+
 h2{
     font-size: large;
     margin-bottom: 1rem;
