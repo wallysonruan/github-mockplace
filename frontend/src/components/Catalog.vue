@@ -28,60 +28,10 @@ function setProductsToDisplay(productsDisplay: Ref<ProductItem[]>, products: Pro
 onMounted(() => {
     getProducts(products_to_display)
 })
-
-type menuOptions = {
-    name: string;
-    url: string
-}
-
-const types: menuOptions[] = [
-    {
-        name: 'Apps',
-        url: ''
-    },
-    {
-        name: 'Actions',
-        url: ''
-    }
-]
-
-const categories: menuOptions[] = [
-    {
-        name: 'API management',
-        url: ''
-    },
-    {
-        name: 'Chat',
-        url: ''
-    },
-    {
-        name: 'Code quality',
-        url: ''
-    }
-]
-
 </script>
 
 <template>
-        <div class="catalog-container">
-            <nav>
-                <div>
-                    <h2>Types</h2>
-                    <ul v-for="type in types" :key="type.name">
-                        <li>
-                            <a :href="type.url">{{ type.name }}</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Categories</h2>
-                    <ul v-for="category in categories" :key="category.name">
-                        <li>
-                            <a :href="category.url">{{ category.name }}</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+        <div>
             <div>
                 <section>
                     <h2>Apps</h2>
@@ -100,16 +50,10 @@ const categories: menuOptions[] = [
 </template>
 
 <style scoped>
-.catalog-container{
-    margin: auto;
-    width: min-content;
-}
 .products-container{
-    background-color: red;
     width: 90vh;
 }
 .apps-container{
-    background-color: yellow;
     display: flex;
     flex-wrap: wrap;
 }
