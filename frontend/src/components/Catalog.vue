@@ -12,7 +12,7 @@ const products_to_display = ref<ProductItem[]>([])
 
 async function getProducts(productsDisplay: Ref<ProductItem[]>): Promise<void> {
     try {
-        const products = ( await axios.get(props.products_url) ).data;
+        const products: ProductItem[] = ( await axios.get(props.products_url) ).data;
         setProductsToDisplay(productsDisplay, products)
     }catch (error) {
         console.error(error);

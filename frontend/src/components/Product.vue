@@ -2,10 +2,14 @@
 
 export type ProductItem =  {
     title: string;
+    publisher_name: string;
+    is_publisher_verified: boolean;
     description: string;
+    is_recommended: boolean;
+    total_downloads: bigint;
     url: string;
-    types: string[];
-    categories: string[]
+    type: string;
+    categories: string[];
 };
 
 defineProps<{ 
