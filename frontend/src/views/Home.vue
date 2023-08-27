@@ -1,20 +1,28 @@
 <script setup lang="ts">
 import Catalog from '../components/Catalog.vue';
 import CatalogMenu from '../components/CatalogMenu.vue';
+import Banner from '../components/Banner.vue';
 </script>
 
 <template>
     <div class="home-container">
-        <CatalogMenu class="catalog-menu" />
-        <Catalog class="catalog-grid" products_url="http://localhost:8080/products" />
+        <div class="catalog">
+            <CatalogMenu class="catalog-menu" />
+            <Catalog class="catalog-grid" products_url="http://localhost:8080/products" />
+        </div>
+        <Banner />
     </div>
 </template>
 
 <style scoped>
     .home-container{
+        padding: 0 12%;
+
+        background-color: rgb(31, 35, 56, 0.05); /* #1F2338, original color  */
+    }
+    
+    .catalog{
         display: flex;
-        width: 80%;
-        margin: auto;
     }
 
     .catalog-grid{
