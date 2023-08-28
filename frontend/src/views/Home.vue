@@ -2,13 +2,41 @@
 import Catalog from '../components/Catalog.vue';
 import CatalogMenu from '../components/CatalogMenu.vue';
 import Banner from '../components/Banner.vue';
+import { ref, Ref, onMounted } from 'vue';
+import { ProductItem } from '../components/Product.vue';
+import axios from 'axios';
+
+const applications_list_url = "http://localhost:8080/products?type=APP"
+const actions_list_url = "http://localhost:8080/products?type=ACTION"
+const applications_products = ref<ProductItem[]>([])
+const actions_products = ref<ProductItem[]>([])
+
+async function getProducts(list_of_products: Ref<ProductItem[]>, products_url: string): Promise<void> {
+    try {
+        const products: ProductItem[] = ( await axios.get(products_url) ).data;
+        setListOfProducts(list_of_products, products)
+    }catch (error) {
+        console.error(error);
+  }
+}
+
+function setListOfProducts(productsDisplay: Ref<ProductItem[]>, products: ProductItem[]){
+    products.forEach((product: ProductItem) => {
+            productsDisplay.value.push(product)
+        });
+}
+
+onMounted(() => {
+    getProducts(applications_products, applications_list_url)
+    getProducts(actions_products, actions_list_url)
+})
 </script>
 
 <template>
     <div class="home-container">
         <div class="catalog">
             <CatalogMenu class="catalog-menu" />
-            <Catalog class="catalog-grid" products_url="http://localhost:8080/products" />
+            <Catalog class="catalog-grid" :applications="applications_products" :actions="actions_products" />
         </div>
         <Banner />
     </div>

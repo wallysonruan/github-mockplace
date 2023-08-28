@@ -1,33 +1,11 @@
 <script setup lang="ts">
-import axios from 'axios';
 import { ProductItem } from './Product.vue';
 import Product from './Product.vue';
-import { Ref, onMounted, ref } from 'vue';
 
-const props = defineProps<{ 
-    products_url: string,
+defineProps<{ 
+    applications: ProductItem[];
+    actions: ProductItem[];
 }>()
-
-const products_to_display = ref<ProductItem[]>([])
-
-async function getProducts(productsDisplay: Ref<ProductItem[]>): Promise<void> {
-    try {
-        const products: ProductItem[] = ( await axios.get(props.products_url) ).data;
-        setProductsToDisplay(productsDisplay, products)
-    }catch (error) {
-        console.error(error);
-  }
-}
-
-function setProductsToDisplay(productsDisplay: Ref<ProductItem[]>, products: ProductItem[]){
-    products.forEach((product: ProductItem) => {
-            productsDisplay.value.push(product)
-        });
-}
-
-onMounted(() => {
-    getProducts(products_to_display)
-})
 </script>
 
 <template>
@@ -36,8 +14,8 @@ onMounted(() => {
             <h2>Apps</h2>
             <div class="products-container">
                 <div class="apps-container">
-                    <div class="product" v-for="product in products_to_display" :key="product.title.slice(0,3)">
-                        <Product :product="product"/>
+                    <div class="product" v-for="application in applications" :key="application.title.slice(0,3)">
+                        <Product :product="application"/>
                     </div>
                 </div>
                 <br>
@@ -48,8 +26,8 @@ onMounted(() => {
             <h2>Apps</h2>
             <div class="products-container">
                 <div class="apps-container">
-                    <div class="product" v-for="product in products_to_display" :key="product.title.slice(0,3)">
-                        <Product :product="product"/>
+                    <div class="product" v-for="action in actions" :key="action.title.slice(0,3)">
+                        <Product :product="action"/>
                     </div>
                 </div>
                 <br>
