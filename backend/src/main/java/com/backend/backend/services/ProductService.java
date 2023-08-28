@@ -2,7 +2,6 @@ package com.backend.backend.services;
 
 import com.backend.backend.models.Product;
 import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

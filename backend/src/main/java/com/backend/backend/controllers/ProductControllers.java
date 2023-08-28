@@ -19,7 +19,7 @@ public class ProductControllers {
 
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/products")
-    ResponseEntity<List<Product>> getAllProductsTypeApplication(@RequestParam(required = false) String type) {
+    ResponseEntity<List<Product>> getProducts(@RequestParam(required = false) String type) {
         if (type != null){
             List<Product> response = service.getProductByType(type);
             return new ResponseEntity<>(response, HttpStatusCode.valueOf(200));
