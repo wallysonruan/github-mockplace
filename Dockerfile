@@ -1,4 +1,4 @@
-FROM openjdk:17-oracle
+FROM eclipse-temurin:17
 
 COPY /backend/build/libs/catalog-0.0.1-SNAPSHOT.jar ./usr/src
 
