@@ -14,8 +14,7 @@ import com.backend.backend.utils.JsonToProduct;
 public class ProductService {
     // Instead of re-running the application to update the list of products,
     // update the file and the application will read it again when requested. Non-stop.
-    private final String PRODUCTS_FILE_PATH = "/Users/wallyson.ruan/Desktop/simple-app-front-back/simple-app" +
-            "/backend/src/main/java/com/backend/backend/resources/products.json";
+    private final String PRODUCTS_FILE_NAME = "products.json";
 
 
     private JsonToProduct jsonToProduct = new JsonToProduct(new Gson());
@@ -24,7 +23,7 @@ public class ProductService {
         return jsonToProduct.convert(productsFilePath);
     }
 
-    Product[] list_of_products = readProductsFile(PRODUCTS_FILE_PATH);
+    Product[] list_of_products = readProductsFile(PRODUCTS_FILE_NAME);
 
     public List<Product> getAllProducts(){
         return Arrays.stream(list_of_products).collect(Collectors.toList());

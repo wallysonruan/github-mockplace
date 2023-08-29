@@ -1,12 +1,11 @@
 package com.backend.backend.utils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 import com.backend.backend.models.Product;
 import com.google.gson.Gson;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
 @Component
 public class JsonToProduct {
@@ -16,12 +15,16 @@ public class JsonToProduct {
         this.gson = gson;
     }
 
-    public Product[] convert(String file_path) {
+    public Product[] convert(String file_name) {
         Product[] products = null;
 
         try {
-            BufferedReader file = new BufferedReader(new FileReader(file_path));
-            products = this.gson.fromJson(file, Product[].class);
+            // Gets file from the /resources folder.
+            File file = ResourceUtils.getFile("classpath:"+ file_name);
+            Reader reader = new FileReader(file);
+
+            // Converts the JSON provided by the Reader object to the Product class.
+            products = this.gson.fromJson(reader, Product[].class);
         } catch (IOException e) {
             e.printStackTrace();
         }
