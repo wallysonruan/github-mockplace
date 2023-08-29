@@ -59,7 +59,7 @@ a:hover{
     text-decoration: underline;
 }
 
-@media (min-width: 600px){
+@media (max-width: 600px){
     .product{
         width: 100%;
     }

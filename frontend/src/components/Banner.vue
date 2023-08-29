@@ -81,7 +81,7 @@ p{
     color: #656D76;
 }
 
-@media (min-width: 600px){
+@media (max-width: 600px){
     aside {
         padding: 2.5rem;
         flex-direction: column;

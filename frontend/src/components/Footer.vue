@@ -29,7 +29,7 @@ const items: string[] = ['Terms', 'Privacy', 'Security', 'Status', 'Docs', 'Cont
 <style scoped>
 footer{
     display: flex;
-    height: 2rem;
+    justify-content: center;
     padding: 1rem;
 
     font-size: small;
@@ -56,8 +56,12 @@ ul{
     gap: 0.5rem;
 }
 
+
 li{
     list-style: none;
+}
+li:not(:last-child){
+    margin-right: 1rem;
 }
 
 a{
@@ -68,7 +72,7 @@ a:hover{
     text-decoration: underline;
 }
 
-@media (min-width: 600px){
+@media (max-width: 600px){
     footer{
         flex-direction: column;
         flex-flow: column-reverse;

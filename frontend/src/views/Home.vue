@@ -58,7 +58,7 @@ onMounted(() => {
     }
 
     .home-container{
-        padding: 0 2.5rem;
+        padding: 5rem 20.5rem 0 20.5rem;
     }
     
     .catalog{
@@ -73,7 +73,7 @@ onMounted(() => {
         width: 20%;
     }
 
-    @media (min-width: 600px) {
+    @media (max-width: 600px) {
         .catalog-menu{
             display: none;
         }

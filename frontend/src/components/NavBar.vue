@@ -64,12 +64,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 0.5px solid rgb(101, 109, 118, 0.5);
 }
 
 .button{
     width: 2rem;
     height: 2rem;
-    border: 1px gray solid;
+    border: 1px rgb(101, 109, 118, 0.5) solid;
     border-radius: 7px;
 }
 

@@ -20,8 +20,16 @@
 
 <style scoped>
 header{
+    height: 17rem;
+    padding-top: 3.5rem;
+    padding-left: 20.5rem;
+
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+
     background-color: white;
-    padding: 1.9rem 2rem 1rem 2.5rem;
 }
 
 h1 {
@@ -41,6 +49,8 @@ h1 {
 
 button{
     padding: 0.5rem 1rem;
+    background-color: rgb(101, 109, 118, 0.06);
+    border: 0.5px rgb(101, 109, 118, 0.5) solid;
     border-radius: 8px;
 }
 </style>
