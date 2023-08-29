@@ -43,6 +43,10 @@ defineProps<{
     flex-wrap: wrap;
 }
 
+section:first-child{
+    margin-bottom: 2rem;
+}
+
 .product{
     width: 50%;
     box-sizing: border-box;
@@ -53,5 +57,11 @@ a{
 }
 a:hover{
     text-decoration: underline;
+}
+
+@media (min-width: 600px){
+    .product{
+        width: 100%;
+    }
 }
 </style>

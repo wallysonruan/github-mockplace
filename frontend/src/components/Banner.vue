@@ -80,4 +80,27 @@ p{
     font-size: small;
     color: #656D76;
 }
+
+@media (min-width: 600px){
+    aside {
+        padding: 2.5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .brand-container{
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .class-name-temporary{
+        width: 100%;
+        text-align: center;
+    }
+
+    section{
+        padding: 0;
+    }
+}
 </style>

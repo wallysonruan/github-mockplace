@@ -11,18 +11,14 @@ const items: string[] = ['Terms', 'Privacy', 'Security', 'Status', 'Docs', 'Cont
                 <img src="../assets/logo-github-gray.png" aria-hidden="true" width="24" height="24">
             </a>
             <span>
-                <small>
-                    &copy; 2023 GitHub, Inc.
-                </small>
+                &copy; 2023 GitHub, Inc.
             </span>
         </div>
         <nav>
             <ul>
                 <li v-for="item in items" :key="item">
                     <a href="">
-                        <small>
-                            {{ item }}
-                        </small>
+                        {{ item }}
                     </a>
                 </li>
             </ul>
@@ -34,11 +30,12 @@ const items: string[] = ['Terms', 'Privacy', 'Security', 'Status', 'Docs', 'Cont
 footer{
     display: flex;
     height: 2rem;
-    padding-bottom: 0.5rem;
+    padding: 1rem;
+
+    font-size: small;
 }
 
 .brand-container{
-    margin-left: 1rem;
     margin-right: 4rem;
 
     display: flex;
@@ -50,16 +47,13 @@ footer{
     margin-right: 0.5rem;
 }
 
-nav{
-    width: 70%;
-}
-
 ul{
     padding: 0;
 
     display: flex;
     justify-content: space-between;
     align-content: space-between;
+    gap: 0.5rem;
 }
 
 li{
@@ -72,5 +66,15 @@ a{
 
 a:hover{
     text-decoration: underline;
+}
+
+@media (min-width: 600px){
+    footer{
+        flex-direction: column;
+        flex-flow: column-reverse;
+        align-items: center;
+
+        height: max-content;
+    }
 }
 </style>
