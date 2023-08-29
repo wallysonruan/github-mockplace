@@ -1,8 +1,7 @@
 FROM openjdk:17-oracle
-RUN microdnf install findutils
-COPY /backend/build/libs/catalog-0.0.1-SNAPSHOT.jar ./home
-WORKDIR /home/
+
+COPY /backend/build/libs/catalog-0.0.1-SNAPSHOT.jar ./usr/src
 
 EXPOSE 8080
 
-CMD java -jar ./catalog-0.0.1-SNAPSHOT.jar
+CMD java -jar ./usr/src/catalog-0.0.1-SNAPSHOT.jar

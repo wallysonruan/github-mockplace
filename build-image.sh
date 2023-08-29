@@ -20,7 +20,4 @@ echo "Building full aplication into a jar"
 cd ..
 echo "Building container image with jar"
 
-docker build -t teste .
-
-echo "Running image, and exposing the port 8080 to the host one"
-docker run -p 8080:8080 teste
+docker build -t "service-catalog" .
