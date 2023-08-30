@@ -8,7 +8,8 @@ help:
 	@echo 'backend-test				Run all Java tests.'
 	@echo 'backend-build			Run all Java tests and build the whole application.'
 	@echo 'build-app-image			Build the whole application image.'
-	@echo 'app-build				Run all builds'
+	@echo 'app-build				Run all builds and generate app docker image.'
+	@echo 'check-in-dance			Run all tests.'
 
 
 BACKEND_FOLDER := "backend/"
@@ -45,3 +46,8 @@ app-build: frontend-build backend-build build-app-image
 	frontend-build
 	backend-build
 	build-app-image
+
+.PHONY: check-in-dance
+check-in-dance: frontend-test backend-test
+	frontend-test
+	backend-test
