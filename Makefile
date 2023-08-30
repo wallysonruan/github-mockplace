@@ -37,6 +37,7 @@ backend-build: backend-test
 build-app-image:
 	docker build -t ${IMAGE_NAME} .
 	@echo 'IMAGE NAME: ${IMAGE_NAME}'
+	docker images
 
 .PHONY: app-build
 app-build: frontend-build backend-build build-app-image
