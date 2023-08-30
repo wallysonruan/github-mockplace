@@ -33,7 +33,7 @@ jobs:
           DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           make build-app-image
-          docker tag service-catalog "$DOCKER_HUB_USERNAME"/service-catalog
+          docker tag github-mockplace "$DOCKER_HUB_USERNAME"/github-mockplace
       
       - name: Logging in to Docker Hub
         shell: bash
@@ -46,4 +46,4 @@ jobs:
         shell: bash
         env:
           DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-        run: 'docker push "$DOCKER_HUB_USERNAME"/service-catalog'
+        run: 'docker push "$DOCKER_HUB_USERNAME"/github-mockplace'

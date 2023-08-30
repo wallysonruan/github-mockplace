@@ -16,7 +16,7 @@
                 <img src="../assets/logo-github.png" alt="Github" width="32" height="32">
             </a>
             <span class="custom-navbar__brand-name">
-                Marketplace
+                Mockplace
             </span>
         </div>
 

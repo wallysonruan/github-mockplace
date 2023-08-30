@@ -3,15 +3,17 @@
 
 help:
 	@echo 'Available commands:'
-	@echo 'frontend-test			Runs all Vue tests.'
-	@echo 'frontend-build			Runs the tests and build the frontend.'
-	@echo 'backend-test				Runs all Java tests.'
-	@echo 'backend-build			Runs all Java tests and build the whole application.'
+	@echo 'frontend-test			Run all Vue tests.'
+	@echo 'frontend-build			Run the tests and build the frontend.'
+	@echo 'backend-test				Run all Java tests.'
+	@echo 'backend-build			Run all Java tests and build the whole application.'
 	@echo 'build-app-image			Build the whole application image.'
+	@echo 'app-build				Run all builds'
+
 
 BACKEND_FOLDER := "backend/"
 FRONTEND_FOLDER := "frontend/"
-IMAGE_NAME := "service-catalog"
+IMAGE_NAME := "github-mockplace"
 
 # Separated lines: Commands executed in different folders, that's why the commands below are united by the && operator.
 # cd <folder> && <command>
