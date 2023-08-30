@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Test and build frontend
-        run: 'make build-frontend'
+        run: 'make frontend-build'
 
       - name: Test and build backend
-        run: 'make build-backend'
+        run: 'make backend-build'
 
       - name: Build application image
         run: 'make build-app-image'
