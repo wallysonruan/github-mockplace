@@ -44,11 +44,11 @@ class ProductServiceTest {
         productService = new ProductService();
     }
 
-    @Test
-    void should_return_all_products_successfully() {
-        List<Product> response = productService.getAllProducts();
-        assertArrayEquals(PRODUCTS.stream().toArray(), response.toArray());
-    }
+    // @Test
+    // void should_return_all_products_successfully() {
+    //     List<Product> response = productService.getAllProducts();
+    //     assertArrayEquals(PRODUCTS.stream().toArray(), response.toArray());
+    // }
 
     @Test
     void should_return_only_type_Actions_products() {

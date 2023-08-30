@@ -7,24 +7,35 @@ help:
 
 # Separated lines: Commands executed in different folders, that's why the commands below are united by the && operator.
 # cd <folder> && <command>
-.PHONY: vue-test
-vue-test:
-	cd frontend && npm run test
+.PHONY: frontend-test
+frontend-test:
+	cd frontend && npm i && npm run test
 
-.PHONY: vue-build
-vue-build:
+.PHONY: frontend-build
+frontend-build: frontend-test
+	cd frontend && npm i
+	make frontend-test
 	cd frontend && npm run build
 
-.PHONY: java-jar
-java-jar:
+.PHONY: backend-test
+backend-test:
+	cd backend && gradle test
+
+.PHONY: backend-build
+backend-build: backend-test
+	make backend-test
 	cd backend && gradle assemble
 
 .PHONY: docker-compose
 docker-compose:
 	docker-compose up
 
-.PHONY: docker-build
-docker-build:
+.PHONY: build-app-image
+build-app-image:
 	docker build -t "simple-catalog" .
 
-build-image: vue-test vue-build java-jar docker-build
+.PHONY: app-build
+app-build: frontend-test frontend-build backend-test backend-build build-app-image
+	make frontend-build
+	make backend-build
+	make build-app-image
