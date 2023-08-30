@@ -10,6 +10,12 @@ export default defineConfig({
   },
   build: {
     outDir: '../backend/src/main/resources/static',
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: "assets/[name][extname]",
+        entryFileNames: "[name].js"
+      }
+    }
   }
 })
