@@ -7,5 +7,9 @@ export default defineConfig({
   plugins: [vue()],
   test: {
     environment: 'jsdom'
+  },
+  build: {
+    outDir: '../backend/src/main/resources/static',
+    emptyOutDir: true
   }
 })
