@@ -11,7 +11,7 @@ help:
 
 BACKEND_FOLDER := "backend/"
 FRONTEND_FOLDER := "frontend/"
-IMAGE_NAME := "simple-catalog"
+IMAGE_NAME := "service-catalog"
 
 # Separated lines: Commands executed in different folders, that's why the commands below are united by the && operator.
 # cd <folder> && <command>
@@ -37,7 +37,6 @@ backend-build: backend-test
 build-app-image:
 	docker build -t ${IMAGE_NAME} .
 	@echo 'IMAGE NAME: ${IMAGE_NAME}'
-	docker images
 
 .PHONY: app-build
 app-build: frontend-build backend-build build-app-image
