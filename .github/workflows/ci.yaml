@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build-application:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone project from GitHub
+        uses: actions/checkout@v3
+      
+      - name: Test and build frontend
+        run: 'make build-frontend'
+
+      - name: Test and build backend
+        run: 'make build-backend'
+
+      - name: Build application image
+        run: 'make build-app-image'
