@@ -30,20 +30,20 @@ jobs:
       - name: Build and tag application image
         shell: bash
         env:
-          DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
+          DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           make build-app-image
-          docker tag service-catalog "$DOCKER_HUB_USER"/service-catalog
+          docker tag service-catalog "$DOCKER_HUB_USERNAME"/service-catalog
       
       - name: Logging in to Docker Hub
         shell: bash
         env: 
-          DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
+          DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
           DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
-        run: 'docker login -u "$DOCKER_HUB_USER" -p "$DOCKER_HUB_PASSWORD"'
+        run: 'docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"'
 
       - name: Push image to Docker Hub
         shell: bash
         env:
-          DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
-        run: 'docker push "$DOCKER_HUB_USER"/service-catalog'
+          DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+        run: 'docker push "$DOCKER_HUB_USERNAME"/service-catalog'
