@@ -18,6 +18,9 @@ This project started for the repository owner to study the Vue framework. Since 
 #### Automatic Testing
 - Mockito
 
+### Application architecture design
+![Application Architecture](./Mockplace.drawio.png)
+
 ## Usage
 
 1. Clone the project repository
