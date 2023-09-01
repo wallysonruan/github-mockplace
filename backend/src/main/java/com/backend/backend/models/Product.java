@@ -7,15 +7,17 @@ public class Product {
     private String description;
     private Boolean is_recommended;
     private int total_downloads;
+    private int total_stars;
+
     private String url;
-    private String types;
+    private String type;
     private String[] categories;
 
     private Product(builder builder){
         this.title = builder.title;
         this.description = builder.description;
         this.url = builder.url;
-        this.types = builder.types;
+        this.type = builder.type;
         this.categories = builder.categories;
     }
 
@@ -43,12 +45,16 @@ public class Product {
         return total_downloads;
     }
 
+    public int getTotal_stars() {
+        return total_stars;
+    }
+
     public String getUrl() {
         return url;
     }
 
-    public String getTypes() {
-        return types;
+    public String getType() {
+        return type;
     }
 
     public String[] getCategories() {
@@ -63,8 +69,9 @@ public class Product {
         private String description;
         private Boolean is_recommended;
         private int total_downloads;
+        private int total_stars;
         private String url;
-        private String types;
+        private String type;
         private String[] categories;
 
         public builder() {
@@ -90,6 +97,11 @@ public class Product {
             return this;
         }
 
+        public builder setTotal_stars(int total_stars) {
+            this.total_stars = total_stars;
+            return this;
+        }
+
         public builder setTitle(String title) {
             this.title = title;
             return this;
@@ -105,8 +117,8 @@ public class Product {
             return this;
         }
 
-        public builder setTypes(String types) {
-            this.types = types;
+        public builder setType(String type) {
+            this.type = type;
             return this;
         }
 

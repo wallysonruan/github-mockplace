@@ -31,7 +31,7 @@ public class ProductService {
 
     public List<Product> getProductByType(String type){
         return Arrays.stream(list_of_products)
-                .filter(product -> product.getTypes().contains(type.toUpperCase()))
+                .filter(product -> product.getType().contains(type.toUpperCase()))
                 .collect(Collectors.toList());
     }
 }

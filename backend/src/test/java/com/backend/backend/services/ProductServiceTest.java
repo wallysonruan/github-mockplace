@@ -24,7 +24,7 @@ class ProductServiceTest {
                     .setIs_recommended(true)
                     .setTotal_downloads(0)
                     .setUrl("this")
-                    .setTypes("APP")
+                    .setType("APP")
                     .setCategories(new String[]{"API_MANAGEMENT"})
                     .build(),
             new Product.builder().setTitle("CircleCI")
@@ -34,7 +34,7 @@ class ProductServiceTest {
                     .setIs_recommended(true)
                     .setTotal_downloads(0)
                     .setUrl("this")
-                    .setTypes("ACTION")
+                    .setType("ACTION")
                     .setCategories(new String[]{"API_MANAGEMENT"})
                     .build()
             );
@@ -54,7 +54,7 @@ class ProductServiceTest {
     void should_return_only_type_Actions_products() {
         List<Product> response = productService.getProductByType("action");
 
-        assertTrue(response.get(0).getTypes().contains("ACTION"));
-        assertFalse(response.get(1).getTypes().contains("APP"));
+        assertTrue(response.get(0).getType().contains("ACTION"));
+        assertFalse(response.get(1).getType().contains("APP"));
     }
 }

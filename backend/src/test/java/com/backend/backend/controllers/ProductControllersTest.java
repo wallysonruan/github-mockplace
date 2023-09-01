@@ -30,7 +30,7 @@ class ProductControllersTest {
                     .setIs_recommended(true)
                     .setTotal_downloads(0)
                     .setUrl("this")
-                    .setTypes("APP")
+                    .setType("APP")
                     .setCategories(new String[]{"API_MANAGEMENT"})
                     .build(),
             new Product.builder().setTitle("CircleCI")
@@ -40,7 +40,7 @@ class ProductControllersTest {
                     .setIs_recommended(true)
                     .setTotal_downloads(0)
                     .setUrl("this")
-                    .setTypes("ACTION")
+                    .setType("ACTION")
                     .setCategories(new String[]{"API_MANAGEMENT"})
                     .build()
     );
