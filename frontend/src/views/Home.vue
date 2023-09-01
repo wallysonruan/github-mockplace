@@ -2,7 +2,7 @@
 import Catalog from '../components/Catalog.vue';
 import CatalogMenu from '../components/CatalogMenu.vue';
 import Banner from '../components/Banner.vue';
-import AnotherBanner from '../components/AnotherBanner.vue';
+import Header from '../components/Header.vue';
 import NavBar from '../components/NavBar.vue';
 import Footer from '../components/Footer.vue';
 
@@ -28,7 +28,7 @@ async function getProducts(list_of_products: Ref<ProductItem[]>, products_url: s
 function setListOfProducts(productsDisplay: Ref<ProductItem[]>, products: ProductItem[]){
     products.forEach((product: ProductItem) => {
             productsDisplay.value.push(product)
-        });
+    });
 }
 
 onMounted(() => {
@@ -40,14 +40,16 @@ onMounted(() => {
 <template>
     <div class="home-background">
         <NavBar />
-        <AnotherBanner />
+        <Header />
+
         <div class="home-container">
             <div class="catalog">
                 <CatalogMenu class="catalog-menu" />
                 <Catalog class="catalog-grid" :applications="applications_products" :actions="actions_products" />
             </div>
-            <Banner />
+            <Banner class="banner"/>
         </div>
+
         <Footer />
     </div>
 </template>
@@ -55,25 +57,28 @@ onMounted(() => {
 <style scoped>
     .home-background{
         background-color: rgb(31, 35, 56, 0.05); /* #1F2338, original color  */
+        width: 100%;
     }
 
     .home-container{
-        padding: 5rem 20.5rem 0 20.5rem;
+        width: 50%;
+        margin: auto;
     }
     
     .catalog{
         display: flex;
-    }
-
-    .catalog-grid{
-        width: 80%;
+        justify-content: space-evenly;
     }
 
     .catalog-menu{
         width: 20%;
     }
 
-    @media (max-width: 600px) {
+    .catalog-grid{
+        width: 80%;
+    }
+
+    @media (max-width: 1000px) {
         .catalog-menu{
             display: none;
         }

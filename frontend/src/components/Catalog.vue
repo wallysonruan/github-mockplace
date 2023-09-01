@@ -23,7 +23,7 @@ defineProps<{
             </div>
         </section>
         <section>
-            <h2>Apps</h2>
+            <h2>Actions</h2>
             <div class="products-container">
                 <div class="apps-container">
                     <div class="product" v-for="action in actions" :key="action.title.slice(0,3)">
@@ -38,9 +38,14 @@ defineProps<{
 </template>
 
 <style scoped>
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
 .apps-container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 section:first-child{
@@ -48,7 +53,7 @@ section:first-child{
 }
 
 .product{
-    width: 50%;
+    width: 48%;
     box-sizing: border-box;
 }
 
@@ -59,9 +64,6 @@ a:hover{
     text-decoration: underline;
 }
 
-@media (max-width: 600px){
-    .product{
-        width: 100%;
-    }
+@media (max-width: 1000px){
 }
 </style>

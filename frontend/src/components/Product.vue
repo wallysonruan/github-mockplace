@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+
 
 export type ProductItem =  {
     title: string;
@@ -6,71 +8,144 @@ export type ProductItem =  {
     is_publisher_verified: boolean;
     description: string;
     is_recommended: boolean;
-    total_downloads: bigint;
+    total_downloads: number;
+    total_stars: number;
     url: string;
     type: string;
     categories: string[];
 };
 
-defineProps<{ 
+const props = defineProps<{ 
     product: ProductItem,
 }>()
+
+function format_numbers(total: number): number | string{
+    const total_bigint = total;
+    const total_str = total_bigint.toString()
+   
+    if (total_bigint == 1000){
+        return `1k`
+    }
+    
+    if ( total_bigint > 1000 && (total_bigint % 1000) > 0){
+        return `${total_str.charAt(0)}.${total_str.charAt(1)}k`
+    }
+
+    if ( total_bigint > 1000 && (total_bigint % 1000) <= 0){
+        return `${total_str.charAt(0)}k`
+    }
+    return total_bigint
+}
+
+const total_stars = computed(() => {
+    return format_numbers(props.product.total_stars)
+})
 
 </script>
 
 <template>
-    <a :href="product.url">
-    <div class="custom-card border-0">
-        <div>
-            <h3 class="custom-card-title">
-                {{product.title}}
-            </h3>
-            <div class="publisher-container">
-                <p class="publisher-name">
-                    <span id="boot-icon" class="bi bi-patch-check custom-patch-check"></span>
-                    <small>
-                        By {{ product.publisher_name }}
-                    </small>
-                </p>
-                <p class="publisher-is-verified" v-if="product.is_publisher_verified">
-                    <span id="boot-icon" class="bi bi-patch-check custom-patch-check"></span>
-                    <small>
-                        Publisher domain and email verified
-                    </small>
-                </p>
+    <div>
+        <a :href="product.url" class="product">
+            <div class="product__image">
+                <img src="" alt="">
             </div>
-                <p class="custom-card-text">
-                    {{product.description}}
-                </p>
-                <span v-if="product.is_recommended" class="is_recommended">
-                    Recommended
-                </span>
-                <span class="total_downloads">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
-                    </svg>
-                    &nbsp;{{product.total_downloads}} stars
-                </span>
+            <div class="product__details border-0">
+                <div>
+                    <h3 class="product-title">
+                        {{product.title}}
+                    </h3>
+
+                    <div v-if="product.type === 'APP'">
+                        <div class="publisher-container">
+                            <p class="publisher-name">
+                                <span id="boot-icon" class="bi bi-patch-check custom-patch-check"></span>
+                                <small>
+                                    By {{ product.publisher_name }}
+                                </small>
+                            </p>
+                            <p class="publisher-is-verified" v-if="product.is_publisher_verified">
+                                <span id="boot-icon" class="bi bi-patch-check custom-patch-check"></span>
+                                <small>
+                                    Publisher domain and email verified
+                                </small>
+                            </p>
+                        </div>
+                        <p class="product-text">
+                            {{product.description}}
+                        </p>
+                        <span v-if="product.is_recommended" class="is_recommended">
+                            Recommended
+                        </span>
+                        <span v-else class="total-downloads">
+                            <svg fill="#656D76" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-download color-fg-muted">
+                                <path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"></path><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.749.749 0 1 1 1.06 1.06l-3.25 3.25a.749.749 0 0 1-1.06 0L4.22 6.78a.749.749 0 1 1 1.06-1.06l1.97 1.969Z"></path>
+                            </svg>
+                            &nbsp;&nbsp;{{product.total_downloads}} installs
+                        </span>
+                    </div>
+
+                    <div v-else>
+                        <div class="publisher-container">
+                            <p class="publisher-name">
+                                <small>
+                                    By {{ product.publisher_name }}
+                                </small>
+                            </p>
+                            <p class="publisher-is-verified" v-if="product.is_publisher_verified">
+                                <span id="boot-icon" class="bi bi-patch-check custom-patch-check"></span>
+                                <small>
+                                    Creator verified by Mockplace
+                                </small>
+                            </p>
+                        </div>
+                        <p class="product-text">
+                            {{product.description}}
+                        </p>
+                        <span class="total-stars">
+                            <svg fill="#656D76" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star color-fg-muted">
+                                <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path>
+                            </svg>
+                            &nbsp;{{ total_stars }} stars
+                        </span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
 </template>
 
 <style scoped>
 a{
     text-decoration: none;
 }
-.custom-card{
+p{
+    margin: 0%;
+}
+.product {
+    display: flex;
+}
+
+.product__image {
+    margin-right: 1rem;
+}
+.product__image > img{
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+
+    background-color: black;
+}
+.product__details{
     height: 100%;
     margin-bottom: 1rem;
 }
-.custom-card-title{
+.product-title{
     color: #0969da;
     font-size: large;
     font-weight: 500;
     margin: 0;
 }
-.custom-card-text{
+.product-text{
     color: #656D76;
     font-size: 0.9rem;
     margin: 0;
@@ -79,6 +154,7 @@ a{
     display: flex;
     color: #656D76;
     font-size: small;
+    margin: 0%;
 }
 .custom-patch-check{
     color: #0969da;
@@ -92,17 +168,17 @@ a{
 .is_recommended{
     border: 0.3px solid #656D76;
     border-radius: 10%/60%;
-}
-
-.is_recommended, .total_downloads{
-    font-weight: 600;
-    font-size: 12px;
-    color: #656D76;
     padding: 3px 7px;
 }
 
-.total_downloads{
+.total-downloads, .total-stars{
     display: flex;
     align-items: center;
+}
+
+.is_recommended, .total-downloads, .total-stars{
+    font-weight: 600;
+    font-size: 12px;
+    color: #656D76;
 }
 </style>

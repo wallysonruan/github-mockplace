@@ -1,7 +1,7 @@
 <template>
     <aside>
         <div class="brand-container">
-            <img src="../assets/icon-github-marketplace.svg" aria-hidden="true">
+            <img src="../assets/images/icon-github-marketplace.svg" aria-hidden="true">
             <h2>
                 List your tool on GitHub Marketplace
             </h2>
