@@ -34,6 +34,8 @@ onMounted(() => {
     getProducts(applications_products, applications_list_url)
     getProducts(actions_products, actions_list_url)
 })
+
+const filter_by: string = "Best Match"
 </script>
 
 <template>
@@ -47,10 +49,10 @@ onMounted(() => {
                     <p class="header__subtitle">Find tools to improve your workflow</p>
                 </div>
                 <div class="header__buttons-container">
-                    <button class="header__button">
+                    <button type="button" class="header__button">
                         Explore free apps
                     </button>
-                    <button class="header__button">
+                    <button type="button" class="header__button">
                         Contact Sales
                     </button>
                 </div>
@@ -59,7 +61,24 @@ onMounted(() => {
 
             <div class="catalog">
                 <CatalogMenu class="catalog-menu" />
-                <Catalog class="catalog-grid" :applications="applications_products" :actions="actions_products" />
+                <div class="catalog-grid">
+
+                    <div class="catalog__search-bar">
+                        <div>
+                            <i class="bi bi-search search-bar__search-icon"></i>
+                            <input type="search" name="" id="" class="search-bar__bar">
+                        </div>
+                        <button type="button" class="search-bar__button">
+                            <span class="search-bar__button--label">Sort:</span> <span class="search-bar__button--filter">{{ filter_by }}</span>
+                            <!--Arrow down icon-->
+                            <svg fill="#656D76" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+                                <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <Catalog :applications="applications_products" :actions="actions_products" />
+                </div>
             </div>
             <Banner class="banner"/>
         </div>
@@ -142,10 +161,41 @@ onMounted(() => {
     .catalog{
         display: flex;
         justify-content: space-evenly;
+
+        padding-top: 3rem;
     }
 
     .catalog-menu{
         width: 20%;
+    }
+
+    .catalog__search-bar{
+        width: 100%;
+        padding: 1rem 0.5rem;
+        padding-top: 0%;
+
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .search-bar__bar{
+        width: 70%;
+    }
+
+    .search-bar__button {
+        padding: 0.5rem 1rem;
+        background-color: rgb(101, 109, 118, 0.06);
+        border: 0.5px rgb(101, 109, 118, 0.5) solid;
+        border-radius: 8px;
+    }
+
+    .search-bar__button--label {
+        font-size: small;
+        color: #656D76;
+    }
+
+    .search-bar__button--filter {
+        font-size: 0.9rem;
     }
 
     .catalog-grid{
