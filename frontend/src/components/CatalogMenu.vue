@@ -135,6 +135,6 @@ a{
     color: #656D76;
 }
 a:hover{
-    color: #0969da;
+    color: var(--default-blue);
 }
 </style>

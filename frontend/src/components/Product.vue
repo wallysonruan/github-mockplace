@@ -140,7 +140,7 @@ p{
     margin-bottom: 1rem;
 }
 .product-title{
-    color: #0969da;
+    color: var(--default-blue);
     font-size: large;
     font-weight: 500;
     margin: 0;
@@ -157,7 +157,7 @@ p{
     margin: 0%;
 }
 .custom-patch-check{
-    color: #0969da;
+    color: var(--default-blue);
     margin-right: 0.1rem;
 }
 

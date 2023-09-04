@@ -69,7 +69,7 @@ h2{
 
 a{
     text-decoration: none;
-    color: #0969da;
+    color: var(--default-blue);
 }
 
 a:hover{
