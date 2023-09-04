@@ -36,8 +36,8 @@
 <style scoped>
 aside{
     display: flex;
-    margin-top: 7rem;
-    margin-bottom: 7rem;
+    justify-content: space-between;
+    margin: 7rem 0;
 
     background-color: white;
     padding: 1.5rem 2.5rem;
@@ -48,12 +48,12 @@ aside{
 .brand-container{
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 20rem;
 }
 
 .class-name-temporary{
     display: flex;
-    width: 80%;
+    width: 30rem;
 }
 
 section{
