@@ -63,10 +63,13 @@ const filter_by: string = "Best Match"
                 <CatalogMenu class="catalog-menu" />
                 <div class="catalog-grid">
 
+                <!---->
                     <div class="catalog__search-bar">
-                        <div>
-                            <i class="bi bi-search search-bar__search-icon"></i>
-                            <input type="search" name="" id="" class="search-bar__bar">
+                        <div class="search-bar__bar-container">
+                            <label for="search-bar">
+                                <i class="bi bi-search search-bar__search-icon"></i>
+                            </label>
+                            <input type="search" id="search-bar" class="search-bar__bar" placeholder="Search for apps and actions">
                         </div>
                         <button type="button" class="search-bar__button">
                             <span class="search-bar__button--label">Sort:</span> <span class="search-bar__button--filter">{{ filter_by }}</span>
@@ -76,6 +79,7 @@ const filter_by: string = "Best Match"
                             </svg>
                         </button>
                     </div>
+                <!---->
 
                     <Catalog :applications="applications_products" :actions="actions_products" />
                 </div>
@@ -94,8 +98,9 @@ const filter_by: string = "Best Match"
     }
 
     .home-container{
-        width: 50%;
+        width: 100%;
         margin: auto;
+        padding: 0% 1.5rem;
     }
 
     header{
@@ -118,9 +123,7 @@ const filter_by: string = "Best Match"
         content: ' ';
 
         top: 0%;
-        left: -50%;
-
-        padding-top: 3.5rem;
+        right: -2.5%;
         background-color: white;
     }
 
@@ -143,6 +146,7 @@ const filter_by: string = "Best Match"
         font-size: 2rem;
         font-weight: 500;
     }
+
     .header__subtitle {
         color: #656D76;
         font-size: 1.3rem;
@@ -179,15 +183,31 @@ const filter_by: string = "Best Match"
 
     .catalog__search-bar{
         width: 100%;
-        padding: 1rem 0.5rem;
-        padding-top: 0%;
 
         display: flex;
-        justify-content: space-evenly;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 1.5rem;
+    }
+
+    .search-bar__bar-container{
+        position: relative;
     }
 
     .search-bar__bar{
-        width: 70%;
+        height: 2.2rem;
+        width: 38rem;
+        padding-left: 2.5rem;
+        background-color: white;
+        border-radius: 7px;
+    }
+
+    .search-bar__search-icon {
+        position: absolute;
+        top: 0.5rem;
+        left: 1rem;
+        z-index: 1;
     }
 
     .search-bar__button {
