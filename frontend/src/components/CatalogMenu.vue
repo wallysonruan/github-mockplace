@@ -97,7 +97,7 @@ const categories: menuOptions[] = [
 
 <template>
     <nav>
-        <div>
+        <div class="list-section">
             <h2>Types</h2>
             <ul v-for="type in types" :key="type.name">
                 <li>
@@ -105,7 +105,8 @@ const categories: menuOptions[] = [
                 </li>
             </ul>
         </div>
-        <div>
+        
+        <div class="list-section">
             <h2>Categories</h2>
             <ul v-for="category in categories" :key="category.name">
                 <li>
@@ -117,23 +118,34 @@ const categories: menuOptions[] = [
 </template>
 
 <style scoped>
+.list-section:not(:last-child){
+    margin-bottom: 2.5rem;
+}
 
 h2{
-    font-size: large;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
     color: #1F2328;
 }
+
 ul {
     padding: 0;
 }
+
 li{
-    list-style: none;  
+    list-style: none;
+    margin-bottom: 1.5rem;
 }
-a{
+
+a, a:visited{
+    display: block; /* Enable the use of width */
+    width: 100%;
     text-decoration: none;
     font-size: small;
     color: #656D76;
 }
+
 a:hover{
     color: var(--default-blue);
 }
