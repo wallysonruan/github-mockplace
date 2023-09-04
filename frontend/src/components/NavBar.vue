@@ -84,6 +84,7 @@
 <style scoped>
 button{
     display: flex;
+    justify-content: center;
     align-items: center;
 
     width: 2rem;
@@ -139,6 +140,7 @@ button{
     border-color: transparent;
     background-color: transparent;
     text-align: start;
+    justify-content: start;
     width: 18.43rem;
 }
 
@@ -156,6 +158,7 @@ kbd {
     color: #6E7781;
     background-color: transparent;
     border: 1px rgb(101, 109, 118, 0.5) solid;
+    border-radius: 3px;
     padding: 1px;
 }
 
@@ -188,14 +191,14 @@ kbd {
 
 .button__create-new{
     width: 3.5rem;
+    padding: 0 0.5rem;
 
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
 }
 
 .button__profile{
-    width: 2.4rem;
+    width: 2rem;
     height: 2rem;
 
     place-content: center;

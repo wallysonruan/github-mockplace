@@ -58,8 +58,9 @@ section:first-child{
     box-sizing: border-box;
 }
 
-a{
+a, a:visited{
     text-decoration: none;
+    color: var(--default-blue);
 }
 a:hover{
     text-decoration: underline;
