@@ -194,12 +194,6 @@ kbd {
     align-items: center;
 }
 
-.button__create-new > i {
-    background-color: red;
-    color: red;
-    
-}
-
 .button__profile{
     width: 2.4rem;
     height: 2rem;
