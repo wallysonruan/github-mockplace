@@ -6,6 +6,7 @@
                 List your tool on GitHub Marketplace
             </h2>
         </div>
+
         <div class="class-name-temporary">
             <section>
                 <a href="">
@@ -17,6 +18,7 @@
                     </small>
                 </p>
             </section>
+            <!---->
             <section>
                 <a href="">
                     Submit your tool for review
@@ -65,11 +67,14 @@ img{
 
 h2{
     font-size: 1.5rem;
+    font-weight: 400;
 }
 
-a{
+a, a:visited{
     text-decoration: none;
     color: var(--default-blue);
+
+    font-weight: 500;
 }
 
 a:hover{

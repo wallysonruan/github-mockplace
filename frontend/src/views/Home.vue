@@ -135,13 +135,18 @@ const filter_by: string = "Best Match"
         max-height: 95%;
     }
 
+    .header__text-container{
+        margin-bottom: 1.5rem;
+    }
+
     .header__title {
         font-size: 2rem;
-        font-weight: 1rem;
+        font-weight: 500;
     }
     .header__subtitle {
         color: #656D76;
         font-size: 1.3rem;
+        font-weight: 400;
     }
 
     .header__buttons-container{
@@ -153,9 +158,12 @@ const filter_by: string = "Best Match"
     .header__button {
         height: 2.8rem;
         padding: 0.5rem 1rem;
+
         background-color: rgb(101, 109, 118, 0.06);
         border: 0.5px rgb(101, 109, 118, 0.5) solid;
         border-radius: 8px;
+
+        font-weight: 400;
     }
     
     .catalog{
