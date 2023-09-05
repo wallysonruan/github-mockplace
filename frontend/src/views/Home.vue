@@ -98,9 +98,9 @@ const filter_by: string = "Best Match"
     }
 
     .home-container{
-        width: 100%;
+        width: 1012px;
         margin: auto;
-        padding: 0% 1.5rem;
+        padding: 0% 1rem;
     }
 
     header{
@@ -117,13 +117,17 @@ const filter_by: string = "Best Match"
     
     header::before{
         position: absolute;
+        content: '';
         z-index: -1;
+        
         width: 100vw;
         height: 100%;
-        content: ' ';
 
         top: 0%;
-        right: -2.5%;
+        right: -40.5%;
+
+        display: inline;
+        
         background-color: white;
     }
 

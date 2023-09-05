@@ -39,6 +39,7 @@ footer{
 
 .brand-container{
     width: max-content;
+    margin-left: 13rem;
     margin-right: 1.5rem;
 
     display: flex;
@@ -53,7 +54,7 @@ footer{
 }
 
 nav {
-    width: 65%;
+    width: 50%;
 }
 
 nav > ul {
